@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#b22222" />
+    <title>Gorditas Mamá Tita · El amor se cocina a fuego lento</title>
+    <meta
+      name="description"
+      content="Gorditas de harina hechas a mano en Chihuahua. Burritos, desayunos y aguas frescas. Lunes a viernes de 7:30 am a 3:00 pm y sábado de 8:00 am a 2:00 pm en Calle Sicomoro #2512, Col. Francisco I. Madero."
+    />
+    <link rel="icon" href="/img/logo.webp" type="image/webp" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <!-- Filtro del sello: desgasta los trazos de los íconos como tinta que no pegó pareja. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <filter id="sello" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="4" result="ruido" />
+          <feColorMatrix in="ruido" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.55" result="hoyos" />
+          <feComposite in="SourceGraphic" in2="hoyos" operator="in" result="gastado" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="9" result="onda" />
+          <feDisplacementMap in="gastado" in2="onda" scale="2.2" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="loader" aria-hidden="true">
+      <img src="/img/logo.webp" alt="" class="loader__logo" />
+      <p class="loader__text">Calentando el comal… <span class="loader__count">0%</span></p>
+    </div>
+
+    <canvas id="stage" aria-hidden="true"></canvas>
+
+    <header class="header">
+      <a class="header__logo" href="#inicio" aria-label="Gorditas Mamá Tita, inicio">
+        <img src="/img/logo.webp" alt="Gorditas Mamá Tita" width="96" height="96" />
+      </a>
+      <a class="status" data-wa="Hola, quiero agendar una posada" href="#"><span class="status__dot"></span>Agenda tus posadas <span aria-hidden="true">↗</span></a>
+      <a class="pill pill--cream header__cta" data-wa="Hola, quiero ordenar unas gorditas" href="#">Pide por WhatsApp <span aria-hidden="true">↗</span></a>
+      <nav class="header__nav" aria-label="Principal">
+        <a href="#menu">Menú</a>
+        <a href="#comunidad">Comunidad</a>
+        <a href="#horario">Horario</a>
+        <a href="#visitanos">Visítanos</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ═══ 01 HERO ═══════════════════════════════════════════════════ -->
+      <section id="inicio" class="hero" data-bg="rojo">
+        <h1 class="hero__giant" aria-label="Gorditas Mamá Tita">
+          <span class="hero__small rochester" data-rise>Gorditas</span>
+          <span class="hero__word" data-letters>MAMÁ</span>
+          <span class="hero__word" data-letters>TITA</span>
+        </h1>
+        <div class="hero__bottom">
+          <span></span>
+          <a class="hero__scroll" href="#cinta" aria-label="Bajar"><span>Bajar</span><i></i></a>
+          <div class="hero__hours" data-rise>
+            <p class="hero__open" data-hero-open>¡Abierto!</p>
+            <p class="hero__until">Lun a Vie · 7:30 am a 3:00 pm</p>
+            <p class="hero__until">Sábado · 8:00 am a 2:00 pm</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 02 CINTA ══════════════════════════════════════════════════ -->
+      <section id="cinta" class="ribbon" aria-label="Lo que hacemos">
+        <div class="ribbon__band ribbon__band--back" aria-hidden="true">
+          <div class="ribbon__track" data-marquee="-1">
+            <span>Desayunos ✱ Hot cakes ✱ Chilaquiles ✱ Licuados ✱ Café de olla ✱ </span><span>Desayunos ✱ Hot cakes ✱ Chilaquiles ✱ Licuados ✱ Café de olla ✱ </span>
+          </div>
+        </div>
+        <div class="ribbon__band ribbon__band--front">
+          <div class="ribbon__track" data-marquee="1">
+            <span>Gorditas ✱ Burritos ✱ Aguas frescas ✱ El amor se cocina a fuego lento ✱ </span><span aria-hidden="true">Gorditas ✱ Burritos ✱ Aguas frescas ✱ El amor se cocina a fuego lento ✱ </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 04 SE ARMA (fija) ══════════════════════════════════════════ -->
+      <section id="se-arma" class="build" data-bg="amarillo">
+        <div class="build__pin">
+          <header class="build__head">
+            <p class="eyebrow">Hecha a mano · todos los días</p>
+            <h2 class="build__title" data-letters-words>UNA GORDITA,<br />ES SENCILLO.</h2>
+          </header>
+          <ol class="build__steps" data-steps>
+            <li><b>01</b><span>La masa<small>Harina, manteca y las manos de Mamá Tita.</small></span></li>
+            <li><b>02</b><span>El comal<small>Se infla, se dora y salen sus manchitas.</small></span></li>
+            <li><b>03</b><span>Se abre<small>Con cuidado, que sale el vapor.</small></span></li>
+            <li><b>04</b><span>El guiso<small>Deshebrada en rojo, o el que tú quieras.</small></span></li>
+            <li><b>05</b><span>¡El queso!<small>Chihuahua, del que se derrite.</small></span></li>
+          </ol>
+          <p class="build__final" data-build-final>
+            <span class="build__name">LA DESHEBRADA</span>
+            <span class="build__note">Caliente, con queso y recién salida del comal.<br />Para comer con las dos manos.</span>
+          </p>
+          <div class="build__bar"><i data-build-bar></i></div>
+        </div>
+      </section>
+
+      <!-- ═══ 05 GALERÍA (horizontal, fija) ══════════════════════════════ -->
+      <section id="galeria" class="gallery" data-bg="crema">
+        <div class="gallery__pin">
+          <header class="gallery__head">
+            <p class="eyebrow eyebrow--rojo">La cocina de Mamá Tita</p>
+            <h2 class="gallery__title" data-letters-words>HECHO EN CASA.<br />SERVIDO CON CARIÑO.</h2>
+          </header>
+          <p class="gallery__ghost" aria-hidden="true" data-ghost>FUEGO LENTO</p>
+          <div class="gallery__track" data-track>
+            <figure class="card" style="--r: -4deg; --y: 30px"><img src="/img/receta-gorditas.webp" alt="Gorditas frente al muro de Nuestra receta" loading="lazy" /><figcaption>Las del día</figcaption></figure>
+            <figure class="card" style="--r: 3deg; --y: 70px"><img src="/img/desayuno-hotcakes.webp" alt="Hot cakes con frutos rojos, huevos y jamón" loading="lazy" /><figcaption>Desayunos</figcaption></figure>
+            <figure class="card" style="--r: -2deg; --y: 0px"><img src="/img/amor-burrito.webp" alt="Burrito y gordita sobre papel de cuadros" loading="lazy" /><figcaption>Burritos</figcaption></figure>
+            <figure class="card" style="--r: 4deg; --y: 50px"><img src="/img/receta-chilaquiles.webp" alt="Chilaquiles rojos con huevos estrellados y frijoles" loading="lazy" /><figcaption>Chilaquiles</figcaption></figure>
+            <figure class="card" style="--r: -3deg; --y: 20px"><img src="/img/mesa-cuadros.webp" alt="Manos tomando gorditas sobre papel de cuadros rojos" loading="lazy" /><figcaption>Para compartir</figcaption></figure>
+            <figure class="card" style="--r: 2deg; --y: 60px"><img src="/img/bon-appetit.webp" alt="Rincón del local con plantas y cuadro de Bon Appetit" loading="lazy" /><figcaption>El rincón</figcaption></figure>
+            <a class="gallery__cta" data-wa="Hola, quiero ordenar unas gorditas" href="#"><span>¡Ven a probar!</span><small>o pide por WhatsApp</small></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 06 MENÚ ═══════════════════════════════════════════════════ -->
+      <section id="menu" class="menu" data-bg="rojo">
+        <div class="wave wave--top" aria-hidden="true"></div>
+        <header class="menu__head">
+          <p class="eyebrow eyebrow--amarillo">Explora por antojo</p>
+          <h2 class="menu__title" data-letters-words>EL MENÚ</h2>
+          <p class="menu__lead">Cada guiso viene en gordita o en burrito. Tú escoges.</p>
+        </header>
+        <div class="filters" role="tablist" aria-label="Categorías del menú" data-filters></div>
+        <div class="menu__list" data-menu></div>
+        <div class="menu__cta">
+          <a class="pill pill--amarillo pill--big" data-wa="Hola, quiero ordenar unas gorditas" href="#">Hacer pedido por WhatsApp <span aria-hidden="true">↗</span></a>
+          <p class="menu__note">Precios en pesos. Llama, ordena y recoge.</p>
+        </div>
+      </section>
+
+      <!-- ═══ 08 COMUNIDAD ══════════════════════════════════════════════ -->
+      <section id="comunidad" class="club" data-bg="amarillo">
+        <div class="wave wave--top wave--rojo" aria-hidden="true"></div>
+        <header class="club__head">
+          <div>
+            <p class="eyebrow eyebrow--rojo">Más que gorditas</p>
+            <h2 class="club__title" data-letters-words>AQUÍ HAY<br />FAMILIA.</h2>
+            <p class="club__lead">Clientes que llegaron por una gordita y se quedaron por la plática. Gracias por la confianza.</p>
+          </div>
+          <figure class="club__polaroid" data-float="-1">
+            <img src="/img/clientes-mesa.webp" alt="Mesa larga de clientes sonriendo en el local" loading="lazy" />
+            <figcaption class="rochester">¡Gracias por la confianza!</figcaption>
+          </figure>
+        </header>
+        <div class="club__grid">
+          <article class="perk" data-rise>
+            <span class="perk__icon" data-icon="puntos"></span>
+            <h3>Programa de puntos</h3>
+            <p>Cada compra te da un punto. <b>10 puntos = 1 gordita gratis</b> de tu elección, y en tu cumpleaños 5% de descuento.</p>
+            <a class="pill pill--rojo" data-wa="Hola, quiero registrar mi ticket para el programa de puntos" href="#">Registra tu ticket ↗</a>
+          </article>
+          <article class="perk perk--tilt" data-rise>
+            <span class="perk__icon" data-icon="torneo"></span>
+            <h3>Torneo de futbolito</h3>
+            <p>Cada mes, sábados y domingos. Equipos de 5 a 7 jugadores, máximo 12 equipos. <b>Inscripción gratis</b> y el campeón se lleva vales en gorditas.</p>
+            <a class="pill pill--rojo" data-wa="Hola, quiero inscribir a mi equipo al torneo de futbolito" href="#">Inscribe tu equipo ↗</a>
+          </article>
+          <article class="perk" data-rise>
+            <span class="perk__icon" data-icon="posadas"></span>
+            <h3>Posadas aquí</h3>
+            <p>En temporada navideña, reserva tu fecha: nosotros ponemos la comida y el ambiente. Paquetes para <b>grupos de 20 o más</b>.</p>
+            <a class="pill pill--rojo" data-wa="Hola, quiero reservar una posada" href="#">Reserva tu fecha ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ═══ 09 HORARIO ════════════════════════════════════════════════ -->
+      <section id="horario" class="hours" data-bg="rojo">
+        <div class="wave wave--top wave--amarillo" aria-hidden="true"></div>
+        <div class="hours__grid">
+          <div>
+            <span class="hours__icon" data-icon="tradicionales" data-icon-plain></span>
+            <p class="eyebrow eyebrow--amarillo">El comal está prendido</p>
+            <h2 class="hours__title" data-letters-words>HORARIO</h2>
+            <div class="slot" data-slot="semana">
+              <span class="slot__today">¡HOY!</span>
+              <p class="slot__days">Lunes a viernes</p>
+              <p class="slot__time">7:30 <i>→</i> 3:00</p>
+            </div>
+            <div class="slot" data-slot="sabado">
+              <span class="slot__today">¡HOY!</span>
+              <p class="slot__days">Sábado</p>
+              <p class="slot__time">8:00 <i>→</i> 2:00</p>
+            </div>
+            <div class="slot slot--off" data-slot="domingo">
+              <span class="slot__today">¡HOY!</span>
+              <p class="slot__days">Domingo</p>
+              <p class="slot__time">Descansamos</p>
+            </div>
+          </div>
+          <div class="hours__side">
+            <figure class="hours__circle" data-float="1">
+              <img src="/img/receta-gorditas.webp" alt="Gorditas recién hechas" loading="lazy" />
+            </figure>
+            <p class="hours__hand rochester" data-brush>el amor se cocina a fuego lento</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 10 VISÍTANOS ══════════════════════════════════════════════ -->
+      <section id="visitanos" class="visit" data-bg="crema">
+        <div class="wave wave--top wave--rojo" aria-hidden="true"></div>
+        <div class="visit__grid">
+          <div>
+            <p class="eyebrow eyebrow--rojo">Te esperamos con las gorditas recién hechas</p>
+            <h2 class="visit__title" data-letters-words>¡AQUÍ<br />ESTAMOS!</h2>
+            <address class="visit__address">
+              <span>Calle Sicomoro #2512</span>
+              <span>Col. Francisco I. Madero</span>
+              <span>Chihuahua, Chih.</span>
+            </address>
+            <div class="visit__actions">
+              <a class="pill pill--rojo pill--big" data-wa="Hola, quiero ordenar unas gorditas" href="#">WhatsApp ↗</a>
+              <a class="pill pill--line pill--big" data-facturacion href="#" target="_blank" rel="noopener">Facturación ↗</a>
+            </div>
+            <ul class="visit__perks">
+              <li><span data-icon="basicas" data-icon-plain></span>Para llevar</li>
+              <li><span data-icon="platillo" data-icon-plain></span>Desayunos</li>
+              <li><span data-icon="bebidas" data-icon-plain></span>Aguas frescas</li>
+            </ul>
+          </div>
+          <a class="visit__map" data-map href="#" target="_blank" rel="noopener" aria-label="Abrir la ubicación en Google Maps">
+            <iframe
+              tabindex="-1"
+              title="Mapa: Gorditas Mamá Tita en Calle Sicomoro #2512, Chihuahua"
+              src="https://maps.google.com/maps?q=Calle%20Sicomoro%202512%2C%20Francisco%20I.%20Madero%2C%20Chihuahua&z=16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══ 11 FINAL ══════════════════════════════════════════════════ -->
+      <section id="final" class="finale" data-bg="rojo">
+        <div class="wave wave--top wave--crema" aria-hidden="true"></div>
+        <a class="finale__card" data-wa="Hola, quiero ordenar unas gorditas" href="#">
+          <span>¿Ya se te antojó? Llama, ordena y recoge.</span>
+          <b>PIDE POR WHATSAPP ↗</b>
+        </a>
+        <h2 class="finale__giant" data-letters aria-label="¡A comer!">¡A COMER!</h2>
+        <footer class="footer">
+          <img src="/img/logo.webp" alt="Gorditas Mamá Tita" width="72" height="72" loading="lazy" />
+          <p>Calle Sicomoro #2512, Col. Francisco I. Madero, Chihuahua</p>
+          <p>Lun a Vie · 7:30 am a 3:00 pm · Sáb · 8:00 am a 2:00 pm</p>
+          <p>© 2026 Gorditas Mamá Tita</p>
+          <a href="https://www.arkastech.com" target="_blank" rel="noopener">Hecho por Arkas Tech</a>
+        </footer>
+        <p class="finale__psst">Psst… toca las gorditas.</p>
+      </section>
+    </main>
+  </body>
+</html>

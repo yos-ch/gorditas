@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.log
+# Los SVG originales del sitio anterior (26 MB) no se suben: las fotos ya
+# optimizadas viven en public/img. Para regenerarlas, ver scripts/fotos.mjs.
+assets-originales/

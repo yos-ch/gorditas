@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prueba 3D · Gordita</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #b22222; }
+      canvas { display: block; width: 100vw; height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <!-- Solo para afinar el modelo: ?flat=1&toast=1&open=0.36&fill=1&cheese=1&comal=0&rx=0.55&ry=0.4&bg=b22222 -->
+    <canvas id="c"></canvas>
+    <script type="module">
+      import { createStage } from '/src/three/stage.js'
+      const q = new URLSearchParams(location.search)
+      const n = (k, d) => (q.has(k) ? Number(q.get(k)) : d)
+      if (q.has('bg')) document.body.style.background = '#' + q.get('bg')
+      const s = createStage(document.getElementById('c'))
+      const g = s.main
+      g.apply({ flat: n('flat', 1), toast: n('toast', 1), open: n('open', 0.26), fill: n('fill', 1), cheese: n('cheese', 1), comal: n('comal', 0) })
+      g.root.rotation.set(n('rx', 0.62), 0, 0)
+      g.body.rotation.set(0, n('ry', 0.35), 0)
+      g.root.scale.setScalar(n('s', 1.4))
+      s.aim(g.root)
+      const loop = () => { s.render(); requestAnimationFrame(loop) }
+      loop()
+      window.__ready = true
+    </script>
+  </body>
+</html>
